@@ -97,7 +97,7 @@ function SectionHeader({
       <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-300/80">
         {eyebrow}
       </p>
-      <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+      <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description ? (
@@ -116,7 +116,7 @@ function PlaceholderImage({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)] ${className}`}
+      className={`relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)] transition-all duration-500 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_40px_100px_-40px_rgba(0,0,0,0.95)] ${className}`}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.2),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.22),transparent_30%)]" />
       <div className="absolute inset-x-6 top-6 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
@@ -150,7 +150,7 @@ function LinkButton({
     <a
       href={href}
       className={cn(
-        "inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-medium transition-all",
+        "inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5",
         variant === "primary"
           ? "bg-white text-slate-950 shadow-[0_20px_40px_-22px_rgba(255,255,255,0.25)] hover:bg-slate-100"
           : "border border-white/15 bg-white/5 text-white hover:bg-white/10"
@@ -171,7 +171,7 @@ function SurfaceCard({
   return (
     <div
       className={cn(
-        "rounded-[1.75rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.9)] backdrop-blur-xl",
+        "rounded-[1.75rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.9)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:bg-white/[0.06] hover:shadow-[0_28px_80px_-40px_rgba(0,0,0,0.95)]",
         className
       )}
     >
@@ -206,7 +206,7 @@ export default function Home() {
                   <Sparkles className="size-4" />
                   Premium youth education and study-travel in the USA
                 </div>
-                <h1 className="mt-6 max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-balance text-white sm:text-6xl lg:text-7xl">
+                <h1 className="mt-6 max-w-3xl text-5xl font-semibold tracking-[-0.055em] text-balance text-white sm:text-6xl lg:text-[5.25rem] lg:leading-[0.95]">
                   A sharper, more structured Summer 2026 for international students.
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
@@ -225,7 +225,7 @@ export default function Home() {
                   </LinkButton>
                 </div>
 
-                <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                <div className="mt-10 grid gap-4 sm:grid-cols-3 sm:gap-5">
                   {[
                     ["5", "destinations"],
                     ["3", "signature tracks"],
@@ -363,7 +363,7 @@ export default function Home() {
       <section id="tracks" className="px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SurfaceCard className="overflow-hidden p-0">
-            <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr] lg:min-h-[26rem]">
               <div className="border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
                 <SectionHeader
                   eyebrow="Signature Tracks"
@@ -445,7 +445,7 @@ export default function Home() {
       <section id="final-cta" className="px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SurfaceCard className="p-0 overflow-hidden">
-            <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr] lg:min-h-[34rem]">
               <div className="border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-300/80">
                   Final CTA
