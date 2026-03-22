@@ -124,16 +124,16 @@ function LinkButton({
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(14,116,144,0.10),transparent_24%),linear-gradient(180deg,#f8fbff_0%,#eff4fb_42%,#f8fafc_100%)] text-slate-900">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.14),transparent_18%),radial-gradient(circle_at_top_right,rgba(15,23,42,0.2),transparent_24%),linear-gradient(180deg,#07111f_0%,#0a1628_36%,#0d1b2f_100%)] text-white">
       <section className="px-4 pb-16 pt-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 shadow-[0_40px_120px_-60px_rgba(15,23,42,0.45)] backdrop-blur">
-            <div className="border-b border-slate-200/70 px-6 py-4 sm:px-8 lg:px-10">
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_40px_120px_-60px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+            <div className="border-b border-white/10 px-6 py-4 sm:px-8 lg:px-10">
               <div className="flex items-center justify-between gap-4">
-                <div className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-900">YES USA</div>
+                <div className="text-sm font-semibold uppercase tracking-[0.28em] text-white">YES USA</div>
                 <a
                   href="#final-cta"
-                  className="text-sm font-medium text-slate-600 transition hover:text-slate-950"
+                  className="text-sm font-medium text-white/70 transition hover:text-white"
                 >
                   Summer 2026 Inquiry
                 </a>
@@ -142,14 +142,14 @@ export default function Home() {
 
             <div className="grid gap-12 px-6 py-10 sm:px-8 md:py-14 lg:grid-cols-[1.15fr_0.85fr] lg:px-10 lg:py-16">
               <div className="flex flex-col justify-center">
-                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm text-sky-900">
+                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm text-sky-200">
                   <Sparkles className="size-4" />
                   Premium youth education and study-travel in the USA
                 </div>
-                <h1 className="mt-6 max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-balance text-slate-950 sm:text-6xl lg:text-7xl">
+                <h1 className="mt-6 max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-balance text-white sm:text-6xl lg:text-7xl">
                   A sharper, more structured Summer 2026 for international students.
                 </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
                   YES USA combines educational credibility, destination appeal, and parent-ready trust across five major US locations and three signature tracks.
                 </p>
 
@@ -169,9 +169,9 @@ export default function Home() {
                     ["3", "signature tracks"],
                     ["12–20", "age range"],
                   ].map(([value, label]) => (
-                    <div key={label} className="rounded-2xl border border-slate-200 bg-white/70 p-5 shadow-sm">
-                      <div className="text-2xl font-semibold text-slate-950">{value}</div>
-                      <div className="mt-1 text-sm text-slate-500">{label}</div>
+                    <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm backdrop-blur">
+                      <div className="text-2xl font-semibold text-white">{value}</div>
+                      <div className="mt-1 text-sm text-white/55">{label}</div>
                     </div>
                   ))}
                 </div>
@@ -180,17 +180,17 @@ export default function Home() {
               <div className="space-y-5">
                 <PlaceholderImage label="Hero lifestyle image: international students on a premium US campus" className="min-h-[360px]" />
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-[1.75rem] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_20px_60px_-30px_rgba(15,23,42,0.7)]">
+                  <div className="rounded-[1.75rem] border border-white/10 bg-white/6 p-6 text-white shadow-[0_20px_60px_-30px_rgba(15,23,42,0.7)] backdrop-blur">
                     <ShieldCheck className="size-5 text-sky-300" />
                     <h3 className="mt-4 text-lg font-semibold">Parent-friendly trust</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-300">
                       Structured programs, thoughtful operations, and a premium brand designed to reassure.
                     </p>
                   </div>
-                  <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-                    <Users2 className="size-5 text-sky-700" />
-                    <h3 className="mt-4 text-lg font-semibold text-slate-950">Agency-ready positioning</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                  <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-sm backdrop-blur">
+                    <Users2 className="size-5 text-sky-300" />
+                    <h3 className="mt-4 text-lg font-semibold text-white">Agency-ready positioning</h3>
+                    <p className="mt-2 text-sm leading-6 text-white/65">
                       Clear product framing for partners, group organizers, and international recruitment channels.
                     </p>
                   </div>
