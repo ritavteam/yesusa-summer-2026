@@ -94,14 +94,14 @@ function SectionHeader({
 }) {
   return (
     <div className="max-w-2xl space-y-4">
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-300/80">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
         {eyebrow}
       </p>
-      <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
+      <h2 className="text-3xl font-semibold tracking-tight text-balance text-slate-950 sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description ? (
-        <p className="text-base leading-7 text-white/65 sm:text-lg">{description}</p>
+        <p className="text-base leading-7 text-slate-600 sm:text-lg">{description}</p>
       ) : null}
     </div>
   );
@@ -116,7 +116,7 @@ function PlaceholderImage({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)] transition-all duration-500 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_40px_100px_-40px_rgba(0,0,0,0.95)] ${className}`}
+      className={`relative overflow-hidden rounded-[2rem] border border-white/60 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.7)] transition-all duration-500 hover:-translate-y-1 hover:border-white/70 hover:shadow-[0_40px_100px_-40px_rgba(15,23,42,0.75)] ${className}`}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.2),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.22),transparent_30%)]" />
       <div className="absolute inset-x-6 top-6 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
@@ -152,8 +152,8 @@ function LinkButton({
       className={cn(
         "inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5",
         variant === "primary"
-          ? "bg-white text-slate-950 shadow-[0_20px_40px_-22px_rgba(255,255,255,0.25)] hover:bg-slate-100"
-          : "border border-white/15 bg-white/5 text-white hover:bg-white/10"
+          ? "bg-slate-950 text-white shadow-[0_20px_40px_-22px_rgba(15,23,42,0.45)] hover:bg-slate-800"
+          : "border border-slate-300 bg-white/80 text-slate-900 hover:bg-slate-50"
       )}
     >
       {children}
@@ -171,7 +171,7 @@ function SurfaceCard({
   return (
     <div
       className={cn(
-        "rounded-[1.75rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.9)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:bg-white/[0.06] hover:shadow-[0_28px_80px_-40px_rgba(0,0,0,0.95)]",
+        "rounded-[1.75rem] border border-slate-200 bg-white/80 p-6 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:bg-white hover:shadow-[0_28px_80px_-40px_rgba(15,23,42,0.22)]",
         className
       )}
     >
@@ -182,18 +182,18 @@ function SurfaceCard({
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.14),transparent_18%),radial-gradient(circle_at_top_right,rgba(15,23,42,0.22),transparent_24%),linear-gradient(180deg,#07111f_0%,#0a1628_36%,#0d1b2f_100%)] text-white">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.14),transparent_18%),radial-gradient(circle_at_top_right,rgba(14,116,144,0.08),transparent_22%),linear-gradient(180deg,#f8fbff_0%,#eef4fb_40%,#f8fafc_100%)] text-slate-900">
       <section className="px-4 pb-16 pt-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_40px_120px_-60px_rgba(0,0,0,0.8)] backdrop-blur-xl">
-            <div className="border-b border-white/10 px-6 py-4 sm:px-8 lg:px-10">
+          <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 shadow-[0_40px_120px_-60px_rgba(15,23,42,0.25)] backdrop-blur-xl">
+            <div className="border-b border-slate-200/70 px-6 py-4 sm:px-8 lg:px-10">
               <div className="flex items-center justify-between gap-4">
-                <div className="text-sm font-semibold uppercase tracking-[0.28em] text-white">
+                <div className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-950">
                   YES USA
                 </div>
                 <a
                   href="#final-cta"
-                  className="text-sm font-medium text-white/70 transition hover:text-white"
+                  className="text-sm font-medium text-slate-600 transition hover:text-slate-950"
                 >
                   Summer 2026 Inquiry
                 </a>
@@ -202,14 +202,14 @@ export default function Home() {
 
             <div className="grid gap-12 px-6 py-10 sm:px-8 md:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-16">
               <div className="flex flex-col justify-center">
-                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm text-sky-200">
+                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm text-sky-900">
                   <Sparkles className="size-4" />
                   Premium youth education and study-travel in the USA
                 </div>
-                <h1 className="mt-6 max-w-3xl text-5xl font-semibold tracking-[-0.055em] text-balance text-white sm:text-6xl lg:text-[5.25rem] lg:leading-[0.95]">
+                <h1 className="mt-6 max-w-3xl text-5xl font-semibold tracking-[-0.055em] text-balance text-slate-950 sm:text-6xl lg:text-[5.25rem] lg:leading-[0.95]">
                   A sharper, more structured Summer 2026 for international students.
                 </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
                   YES USA combines educational credibility, destination appeal,
                   and parent-ready trust across five major US locations and three
                   signature tracks.
@@ -232,8 +232,8 @@ export default function Home() {
                     ["12–20", "age range"],
                   ].map(([value, label]) => (
                     <SurfaceCard key={label} className="p-5">
-                      <div className="text-2xl font-semibold text-white">{value}</div>
-                      <div className="mt-1 text-sm text-white/55">{label}</div>
+                      <div className="text-2xl font-semibold text-slate-950">{value}</div>
+                      <div className="mt-1 text-sm text-slate-500">{label}</div>
                     </SurfaceCard>
                   ))}
                 </div>
@@ -246,21 +246,21 @@ export default function Home() {
                 />
                 <div className="grid gap-4 sm:grid-cols-2">
                   <SurfaceCard>
-                    <ShieldCheck className="size-5 text-sky-300" />
-                    <h3 className="mt-4 text-lg font-semibold text-white">
+                    <ShieldCheck className="size-5 text-sky-700" />
+                    <h3 className="mt-4 text-lg font-semibold text-slate-950">
                       Parent-friendly trust
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-white/65">
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
                       Structured programs, thoughtful operations, and a premium
                       brand designed to reassure.
                     </p>
                   </SurfaceCard>
                   <SurfaceCard>
-                    <Users2 className="size-5 text-sky-300" />
-                    <h3 className="mt-4 text-lg font-semibold text-white">
+                    <Users2 className="size-5 text-sky-700" />
+                    <h3 className="mt-4 text-lg font-semibold text-slate-950">
                       Agency-ready positioning
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-white/65">
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
                       Clear product framing for partners, group organizers, and
                       international recruitment channels.
                     </p>
@@ -308,11 +308,11 @@ export default function Home() {
               },
             ].map((item) => (
               <SurfaceCard key={item.title}>
-                <item.icon className="size-5 text-sky-300" />
-                <h3 className="mt-4 text-lg font-semibold text-white">
+                <item.icon className="size-5 text-sky-700" />
+                <h3 className="mt-4 text-lg font-semibold text-slate-950">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-white/65">
+                <p className="mt-3 text-sm leading-6 text-slate-600">
                   {item.description}
                 </p>
               </SurfaceCard>
@@ -328,16 +328,16 @@ export default function Home() {
               <SurfaceCard key={location.name} className="sm:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <div className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-300/80">
+                    <div className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-700/80">
                       0{index + 1}
                     </div>
-                    <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white">
+                    <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
                       {location.name}
                     </h3>
                   </div>
-                  <MapPin className="mt-1 size-5 shrink-0 text-white/35" />
+                  <MapPin className="mt-1 size-5 shrink-0 text-slate-400" />
                 </div>
-                <p className="mt-4 max-w-2xl text-base leading-7 text-white/65">
+                <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
                   {location.description}
                 </p>
               </SurfaceCard>
@@ -364,23 +364,23 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SurfaceCard className="overflow-hidden p-0">
             <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr] lg:min-h-[26rem]">
-              <div className="border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
+              <div className="border-b border-slate-200 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
                 <SectionHeader
                   eyebrow="Signature Tracks"
                   title="Focused pathways for students who want direction, not filler."
                   description="Each track can later become a richer academic or marketing story with outcomes, sample modules, and profile-based targeting."
                 />
               </div>
-              <div className="grid gap-px bg-white/10 md:grid-cols-3">
+              <div className="grid gap-px bg-slate-200 md:grid-cols-3">
                 {tracks.map((track) => (
-                  <div key={track.title} className="bg-white/[0.035] p-6 sm:p-8">
-                    <div className="inline-flex rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-white/70">
+                  <div key={track.title} className="bg-white/75 p-6 sm:p-8">
+                    <div className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.24em] text-slate-500">
                       Signature Track
                     </div>
-                    <h3 className="mt-5 text-2xl font-semibold text-white">
+                    <h3 className="mt-5 text-2xl font-semibold text-slate-950">
                       {track.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 text-white/65">
+                    <p className="mt-3 text-sm leading-6 text-slate-600">
                       {track.description}
                     </p>
                   </div>
@@ -403,10 +403,10 @@ export default function Home() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {included.map((item) => (
                 <SurfaceCard key={item} className="flex items-start gap-3 p-4">
-                  <div className="mt-0.5 rounded-full bg-sky-400/15 p-1 text-sky-300">
+                  <div className="mt-0.5 rounded-full bg-sky-100 p-1 text-sky-800">
                     <Check className="size-4" />
                   </div>
-                  <p className="text-sm leading-6 text-white/72">{item}</p>
+                  <p className="text-sm leading-6 text-slate-700">{item}</p>
                 </SurfaceCard>
               ))}
             </div>
@@ -430,10 +430,10 @@ export default function Home() {
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {audiences.map((audience) => (
               <SurfaceCard key={audience.title} className="sm:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-white">
+                <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
                   {audience.title}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-white/65">
+                <p className="mt-4 text-base leading-7 text-slate-600">
                   {audience.description}
                 </p>
               </SurfaceCard>
@@ -444,31 +444,31 @@ export default function Home() {
 
       <section id="final-cta" className="px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <SurfaceCard className="p-0 overflow-hidden">
+          <SurfaceCard className="p-0 overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(233,243,255,0.92))]">
             <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr] lg:min-h-[34rem]">
-              <div className="border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-300/80">
+              <div className="border-b border-slate-200 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
                   Final CTA
                 </p>
-                <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
                   Position YES USA as the summer brand families trust and agencies can confidently sell.
                 </h2>
-                <p className="mt-5 max-w-2xl text-lg leading-8 text-white/65">
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
                   Premium destinations, structured delivery, and a modern
                   international presentation — now in a stronger, more
                   conversion-ready format.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  <SurfaceCard className="p-5">
-                    <p className="text-sm font-semibold text-white">For families</p>
-                    <p className="mt-2 text-sm leading-6 text-white/65">
+                  <SurfaceCard className="p-5 bg-white/70">
+                    <p className="text-sm font-semibold text-slate-950">For families</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
                       Ask for dates, pricing, destination guidance, and the right
                       track for your student.
                     </p>
                   </SurfaceCard>
-                  <SurfaceCard className="p-5">
-                    <p className="text-sm font-semibold text-white">For agencies</p>
-                    <p className="mt-2 text-sm leading-6 text-white/65">
+                  <SurfaceCard className="p-5 bg-white/70">
+                    <p className="text-sm font-semibold text-slate-950">For agencies</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
                       Request program sheets, group positioning support, and
                       partnership information for Summer 2026.
                     </p>
@@ -476,42 +476,42 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white/[0.035] p-6 sm:p-8 lg:p-10">
+              <div className="bg-white/55 p-6 sm:p-8 lg:p-10">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <p className="text-sm font-semibold text-white">
+                    <p className="text-sm font-semibold text-slate-950">
                       Inquiry form placeholder
                     </p>
-                    <p className="mt-1 text-sm text-white/55">
+                    <p className="mt-1 text-sm text-slate-500">
                       Designed so this can later connect to a real CRM or form
                       backend.
                     </p>
                   </div>
-                  <div className="rounded-full bg-sky-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
+                  <div className="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-800">
                     V1
                   </div>
                 </div>
 
                 <div className="mt-6 grid gap-4">
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <SurfaceCard className="p-4">
-                      <label className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
+                    <SurfaceCard className="p-4 bg-white/70">
+                      <label className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
                         I am a
                       </label>
                       <div className="mt-3 flex gap-2 flex-wrap">
-                        <span className="rounded-full bg-white px-3 py-2 text-xs font-medium text-slate-950">
+                        <span className="rounded-full bg-slate-950 px-3 py-2 text-xs font-medium text-white">
                           Parent / Student
                         </span>
-                        <span className="rounded-full border border-white/15 px-3 py-2 text-xs font-medium text-white/80">
+                        <span className="rounded-full border border-slate-300 px-3 py-2 text-xs font-medium text-slate-700">
                           Agency / Group
                         </span>
                       </div>
                     </SurfaceCard>
-                    <SurfaceCard className="p-4">
-                      <label className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
+                    <SurfaceCard className="p-4 bg-white/70">
+                      <label className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
                         Interested in
                       </label>
-                      <p className="mt-3 text-sm text-white/72">
+                      <p className="mt-3 text-sm text-slate-700">
                         Miami · New York · Stevens / NYC · LA / OC · Boston
                       </p>
                     </SurfaceCard>
@@ -526,7 +526,7 @@ export default function Home() {
                     ].map((field) => (
                       <div
                         key={field}
-                        className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/35"
+                        className="rounded-2xl border border-slate-200 bg-white/75 px-4 py-3 text-sm text-slate-400"
                       >
                         {field}
                       </div>
@@ -552,9 +552,9 @@ export default function Home() {
       </section>
 
       <footer className="px-4 pb-10 pt-4 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 rounded-[1.5rem] border border-white/10 bg-white/[0.035] px-6 py-6 text-sm text-white/45 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 rounded-[1.5rem] border border-slate-200 bg-white/70 px-6 py-6 text-sm text-slate-500 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <div className="font-semibold uppercase tracking-[0.24em] text-white">
+            <div className="font-semibold uppercase tracking-[0.24em] text-slate-950">
               YES USA
             </div>
             <p className="mt-1">
