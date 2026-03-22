@@ -340,30 +340,69 @@ export default function Home() {
 
       <section id="final-cta" className="px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-[2rem] border border-sky-200 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(231,241,255,0.95))] px-6 py-10 shadow-[0_35px_100px_-60px_rgba(14,116,144,0.65)] sm:px-8 lg:px-10 lg:py-12">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">Final CTA</p>
               <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
                 Position YES USA as the summer brand families trust and agencies can confidently sell.
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-                Premium destinations, structured delivery, and a modern international presentation — now in a stronger, more scalable landing-page format.
+                Premium destinations, structured delivery, and a modern international presentation — now in a stronger, more conversion-ready format.
               </p>
-            </div>
-
-            <div className="rounded-[1.75rem] border border-white/70 bg-white/80 p-6 shadow-sm backdrop-blur">
-              <div className="space-y-3 text-sm text-slate-600">
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <span className="font-semibold text-slate-950">For families:</span> placeholder CTA for inquiry form or brochure download.
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[1.5rem] border border-slate-200 bg-white/80 p-5 shadow-sm">
+                  <p className="text-sm font-semibold text-slate-950">For families</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    Ask for dates, pricing, destination guidance, and the right track for your student.
+                  </p>
                 </div>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <span className="font-semibold text-slate-950">For agencies:</span> placeholder CTA for partnership intake or program sheet request.
+                <div className="rounded-[1.5rem] border border-slate-200 bg-white/80 p-5 shadow-sm">
+                  <p className="text-sm font-semibold text-slate-950">For agencies</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    Request program sheets, group positioning support, and partnership information for Summer 2026.
+                  </p>
                 </div>
               </div>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-white/70 bg-white/85 p-6 shadow-sm backdrop-blur">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-slate-950">Inquiry form placeholder</p>
+                  <p className="mt-1 text-sm text-slate-500">Designed so this can later connect to a real CRM or form backend.</p>
+                </div>
+                <div className="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-800">
+                  V1
+                </div>
+              </div>
+
+              <div className="mt-6 grid gap-4">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                    <label className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">I am a</label>
+                    <div className="mt-3 flex gap-2">
+                      <span className="rounded-full bg-slate-950 px-3 py-2 text-xs font-medium text-white">Parent / Student</span>
+                      <span className="rounded-full border border-slate-300 px-3 py-2 text-xs font-medium text-slate-700">Agency / Group</span>
+                    </div>
+                  </div>
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                    <label className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Interested in</label>
+                    <p className="mt-3 text-sm text-slate-700">Miami · New York · Stevens / NYC · LA / OC · Boston</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-3">
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-400">Full name</div>
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-400">Email address</div>
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-400">Country / agency name</div>
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-400">Message / student profile / group request</div>
+                </div>
+              </div>
+
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <LinkButton href="mailto:hello@yesusa.com?subject=YES%20USA%20Summer%202026">Request information</LinkButton>
+                <LinkButton href="mailto:hello@yesusa.com?subject=YES%20USA%20Summer%202026%20Inquiry">Request information</LinkButton>
                 <LinkButton href="mailto:partners@yesusa.com?subject=YES%20USA%20Agency%20Partnership" variant="secondary">
-                  For agencies
+                  Agency partnership
                 </LinkButton>
               </div>
             </div>
