@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowRight,
   Check,
@@ -83,6 +84,22 @@ const audiences = [
   },
 ];
 
+const imageSets = {
+  hero: [
+    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1400&q=80",
+    "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1400&q=80",
+  ],
+  locations: [
+    "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+  ],
+  program: [
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+  ],
+};
+
 function SectionHeader({
   eyebrow,
   title,
@@ -93,7 +110,7 @@ function SectionHeader({
   description?: string;
 }) {
   return (
-    <div className="max-w-2xl space-y-4">
+    <div className="max-w-2xl space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
         {eyebrow}
       </p>
@@ -107,30 +124,44 @@ function SectionHeader({
   );
 }
 
-function PlaceholderImage({
+function MediaMosaic({
+  images,
   label,
   className = "",
 }: {
+  images: string[];
   label: string;
   className?: string;
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[2rem] border border-white/60 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.7)] transition-all duration-500 hover:-translate-y-1 hover:border-white/70 hover:shadow-[0_40px_100px_-40px_rgba(15,23,42,0.75)] ${className}`}
+      className={cn(
+        "group relative overflow-hidden rounded-[2rem] border border-white/60 bg-slate-900 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.7)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_40px_100px_-40px_rgba(15,23,42,0.75)] animate-in fade-in zoom-in-95 slide-in-from-bottom-6",
+        className
+      )}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.2),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.22),transparent_30%)]" />
+      <div className="absolute inset-0 grid grid-cols-2 gap-1 bg-slate-950 p-1">
+        <div className="relative overflow-hidden rounded-[1.4rem]">
+          <Image src={images[0]} alt={label} fill className="object-cover transition duration-700 group-hover:scale-105" unoptimized />
+        </div>
+        <div className="grid gap-1">
+          <div className="relative overflow-hidden rounded-[1.4rem]">
+            <Image src={images[1] ?? images[0]} alt={label} fill className="object-cover transition duration-700 group-hover:scale-105" unoptimized />
+          </div>
+          <div className="relative overflow-hidden rounded-[1.4rem]">
+            <Image src={images[2] ?? images[0]} alt={label} fill className="object-cover transition duration-700 group-hover:scale-105" unoptimized />
+          </div>
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.06),rgba(15,23,42,0.72))]" />
       <div className="absolute inset-x-6 top-6 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-      <div className="relative flex h-full min-h-[280px] flex-col justify-between p-6 text-white">
-        <div className="inline-flex w-fit rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.26em] text-white/75">
-          Placeholder image
+      <div className="relative z-10 flex min-h-[320px] flex-col justify-between p-6 text-white">
+        <div className="inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.26em] text-white/80 backdrop-blur">
+          Image direction
         </div>
         <div>
-          <p className="text-sm uppercase tracking-[0.28em] text-white/55">
-            Visual direction
-          </p>
-          <h3 className="mt-3 max-w-sm text-2xl font-semibold leading-tight">
-            {label}
-          </h3>
+          <p className="text-sm uppercase tracking-[0.28em] text-white/65">Visual direction</p>
+          <h3 className="mt-3 max-w-sm text-2xl font-semibold leading-tight">{label}</h3>
         </div>
       </div>
     </div>
@@ -171,7 +202,7 @@ function SurfaceCard({
   return (
     <div
       className={cn(
-        "rounded-[1.75rem] border border-slate-200 bg-white/80 p-6 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:bg-white hover:shadow-[0_28px_80px_-40px_rgba(15,23,42,0.22)]",
+        "rounded-[1.75rem] border border-slate-200 bg-white/80 p-6 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:bg-white hover:shadow-[0_28px_80px_-40px_rgba(15,23,42,0.22)] animate-in fade-in slide-in-from-bottom-4",
         className
       )}
     >
@@ -185,7 +216,7 @@ export default function Home() {
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.14),transparent_18%),radial-gradient(circle_at_top_right,rgba(14,116,144,0.08),transparent_22%),linear-gradient(180deg,#f8fbff_0%,#eef4fb_40%,#f8fafc_100%)] text-slate-900">
       <section className="px-4 pb-16 pt-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 shadow-[0_40px_120px_-60px_rgba(15,23,42,0.25)] backdrop-blur-xl">
+          <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 shadow-[0_40px_120px_-60px_rgba(15,23,42,0.25)] backdrop-blur-xl animate-in fade-in zoom-in-95 duration-700">
             <div className="border-b border-slate-200/70 px-6 py-4 sm:px-8 lg:px-10">
               <div className="flex items-center justify-between gap-4">
                 <div className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-950">
@@ -201,7 +232,7 @@ export default function Home() {
             </div>
 
             <div className="grid gap-12 px-6 py-10 sm:px-8 md:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-16">
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center animate-in fade-in slide-in-from-left-6 duration-700">
                 <div className="inline-flex w-fit items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm text-sky-900">
                   <Sparkles className="size-4" />
                   Premium youth education and study-travel in the USA
@@ -239,9 +270,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="space-y-5">
-                <PlaceholderImage
-                  label="Hero lifestyle image: international students on a premium US campus"
+              <div className="space-y-5 animate-in fade-in slide-in-from-right-6 duration-700">
+                <MediaMosaic
+                  images={imageSets.hero}
+                  label="International students on a premium US campus"
                   className="min-h-[400px]"
                 />
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -351,8 +383,9 @@ export default function Home() {
               description="The structure is designed so each city can later expand into its own dedicated conversion section or standalone page."
             />
             <div className="mt-8">
-              <PlaceholderImage
-                label="Location collage placeholder: Miami, NYC, Stevens, LA/OC, Boston"
+              <MediaMosaic
+                images={imageSets.locations}
+                label="Miami, NYC, Stevens, LA / OC, and Boston"
                 className="min-h-[520px]"
               />
             </div>
@@ -373,7 +406,7 @@ export default function Home() {
               </div>
               <div className="grid gap-px bg-slate-200 md:grid-cols-3">
                 {tracks.map((track) => (
-                  <div key={track.title} className="bg-white/75 p-6 sm:p-8">
+                  <div key={track.title} className="bg-white/75 p-6 sm:p-8 transition-colors duration-300 hover:bg-white">
                     <div className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.24em] text-slate-500">
                       Signature Track
                     </div>
@@ -412,8 +445,9 @@ export default function Home() {
             </div>
           </div>
 
-          <PlaceholderImage
-            label="Program lifestyle placeholder: campus, classrooms, excursions, student support"
+          <MediaMosaic
+            images={imageSets.program}
+            label="Campus life, classrooms, excursions, and support"
             className="min-h-[520px]"
           />
         </div>
@@ -444,13 +478,13 @@ export default function Home() {
 
       <section id="final-cta" className="px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <SurfaceCard className="p-0 overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(233,243,255,0.92))]">
+          <SurfaceCard className="overflow-hidden p-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(233,243,255,0.92))]">
             <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr] lg:min-h-[34rem]">
               <div className="border-b border-slate-200 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
                   Final CTA
                 </p>
-                <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+                <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl animate-in fade-in slide-in-from-bottom-4 duration-700">
                   Position YES USA as the summer brand families trust and agencies can confidently sell.
                 </h2>
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
@@ -459,14 +493,14 @@ export default function Home() {
                   conversion-ready format.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  <SurfaceCard className="p-5 bg-white/70">
+                  <SurfaceCard className="bg-white/70 p-5">
                     <p className="text-sm font-semibold text-slate-950">For families</p>
                     <p className="mt-2 text-sm leading-6 text-slate-600">
                       Ask for dates, pricing, destination guidance, and the right
                       track for your student.
                     </p>
                   </SurfaceCard>
-                  <SurfaceCard className="p-5 bg-white/70">
+                  <SurfaceCard className="bg-white/70 p-5">
                     <p className="text-sm font-semibold text-slate-950">For agencies</p>
                     <p className="mt-2 text-sm leading-6 text-slate-600">
                       Request program sheets, group positioning support, and
@@ -476,7 +510,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white/55 p-6 sm:p-8 lg:p-10">
+              <div className="bg-white/55 p-6 sm:p-8 lg:p-10 animate-in fade-in slide-in-from-right-6 duration-700">
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <p className="text-sm font-semibold text-slate-950">
@@ -494,7 +528,7 @@ export default function Home() {
 
                 <div className="mt-6 grid gap-4">
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <SurfaceCard className="p-4 bg-white/70">
+                    <SurfaceCard className="bg-white/70 p-4">
                       <label className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
                         I am a
                       </label>
@@ -507,7 +541,7 @@ export default function Home() {
                         </span>
                       </div>
                     </SurfaceCard>
-                    <SurfaceCard className="p-4 bg-white/70">
+                    <SurfaceCard className="bg-white/70 p-4">
                       <label className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
                         Interested in
                       </label>
@@ -526,7 +560,7 @@ export default function Home() {
                     ].map((field) => (
                       <div
                         key={field}
-                        className="rounded-2xl border border-slate-200 bg-white/75 px-4 py-3 text-sm text-slate-400"
+                        className="rounded-2xl border border-slate-200 bg-white/75 px-4 py-3 text-sm text-slate-400 transition-colors duration-300 hover:bg-white"
                       >
                         {field}
                       </div>
@@ -552,7 +586,7 @@ export default function Home() {
       </section>
 
       <footer className="px-4 pb-10 pt-4 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 rounded-[1.5rem] border border-slate-200 bg-white/70 px-6 py-6 text-sm text-slate-500 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 rounded-[1.5rem] border border-slate-200 bg-white/70 px-6 py-6 text-sm text-slate-500 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between animate-in fade-in duration-700">
           <div>
             <div className="font-semibold uppercase tracking-[0.24em] text-slate-950">
               YES USA
