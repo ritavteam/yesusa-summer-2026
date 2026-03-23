@@ -84,6 +84,54 @@ const audiences = [
   },
 ];
 
+const trustPoints = [
+  "Structured supervision and organized student support",
+  "Pre-arrival guidance for parents, agencies, and groups",
+  "Educational framing that goes beyond generic camp marketing",
+  "Premium destinations with clear operational planning",
+];
+
+const testimonials = [
+  {
+    quote:
+      "This feels like a serious international summer program, not just a camp with nicer branding.",
+    role: "Parent perspective placeholder",
+  },
+  {
+    quote:
+      "The positioning is clean, premium, and much easier for agencies to sell with confidence.",
+    role: "Agency perspective placeholder",
+  },
+  {
+    quote:
+      "Students get excitement, while families still see structure and educational value.",
+    role: "Program advisor placeholder",
+  },
+];
+
+const faqs = [
+  {
+    question: "Who are YES USA Summer 2026 programs designed for?",
+    answer:
+      "YES USA is designed for international students ages 12–20, as well as parents, agencies, and group organizers looking for a premium USA summer experience.",
+  },
+  {
+    question: "What makes YES USA different from a generic summer camp?",
+    answer:
+      "The positioning is more structured, academically framed, and parent-friendly. The brand emphasizes trust, organization, educational value, and premium destinations.",
+  },
+  {
+    question: "Are the 2026 locations and tracks already defined?",
+    answer:
+      "Yes. The current direction includes Miami, New York, Stevens / NYC Access, Los Angeles / Orange County, and Boston, plus signature tracks in Model UN, Coding, and Young Entrepreneurs.",
+  },
+  {
+    question: "Can agencies or groups request partnership information?",
+    answer:
+      "Yes. The page includes a dedicated agency path and partnership CTA so future versions can connect directly to an agency intake or CRM workflow.",
+  },
+];
+
 const imageSets = {
   hero: [
     "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1400&q=80",
@@ -470,6 +518,70 @@ export default function Home() {
                 <p className="mt-4 text-base leading-7 text-slate-600">
                   {audience.description}
                 </p>
+              </SurfaceCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div>
+            <SectionHeader
+              eyebrow="Parent trust"
+              title="Built to feel safe, clear, and genuinely well-organized."
+              description="Parents need more than aspiration. They need structure, communication, and a visible sense that the program is professionally run."
+            />
+            <div className="mt-8 grid gap-4">
+              {trustPoints.map((point) => (
+                <SurfaceCard key={point} className="flex items-start gap-3 p-4">
+                  <div className="mt-0.5 rounded-full bg-sky-100 p-1 text-sky-800">
+                    <ShieldCheck className="size-4" />
+                  </div>
+                  <p className="text-sm leading-6 text-slate-700">{point}</p>
+                </SurfaceCard>
+              ))}
+            </div>
+          </div>
+
+          <MediaMosaic
+            images={imageSets.program}
+            label="Student support, supervision, and program structure"
+            className="min-h-[500px]"
+          />
+        </div>
+      </section>
+
+      <section className="px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="Social proof"
+            title="The page should feel credible to families and easy for agencies to believe in."
+            description="These are still placeholder proof blocks, but they improve the conversion story and make the page feel more complete."
+          />
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {testimonials.map((item) => (
+              <SurfaceCard key={item.quote} className="sm:p-8">
+                <p className="text-lg leading-8 text-slate-700">“{item.quote}”</p>
+                <p className="mt-6 text-sm font-medium text-slate-500">{item.role}</p>
+              </SurfaceCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="FAQ"
+            title="The first questions families and partners will ask."
+            description="A landing page like this converts better when obvious objections are answered cleanly before the user has to ask."
+          />
+          <div className="mt-10 grid gap-4">
+            {faqs.map((item) => (
+              <SurfaceCard key={item.question} className="sm:p-6">
+                <h3 className="text-lg font-semibold text-slate-950">{item.question}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.answer}</p>
               </SurfaceCard>
             ))}
           </div>
